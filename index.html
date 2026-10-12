@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070d">
+<title>Donde mi amor te abraza | 12 de octubre</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #e6c77c;
+  --gold-light: #fff0bf;
+  --purple: #ce70ff;
+  --purple-bright: #e8b4ff;
+  --black: #08070d;
+  --panel: rgba(19, 16, 26, .91);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--black);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #f8edda;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(93, 59, 119, .15), transparent 38%),
+    radial-gradient(ellipse at 85% 50%, rgba(159, 116, 44, .10), transparent 42%),
+    linear-gradient(155deg, #08070d, #100d17 52%, #050509);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  position: relative;
+}
+
+/* Reflejos nocturnos como luz sobre el agua */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .25;
+  background:
+    repeating-linear-gradient(
+      174deg,
+      transparent 0px,
+      transparent 55px,
+      rgba(230, 199, 124, .055) 57px,
+      transparent 59px,
+      transparent 105px
+    );
+  animation: water 12s ease-in-out infinite alternate;
+}
+
+@keyframes water {
+  from { transform: translateX(-8px) translateY(0); }
+  to { transform: translateX(8px) translateY(5px); }
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, #ffe7aa 98%, transparent),
+    radial-gradient(2px 2px at 80% 15%, #d9b8ff 98%, transparent),
+    radial-gradient(1px 1px at 72% 61%, #fff0bf 98%, transparent),
+    radial-gradient(1px 1px at 24% 78%, #d9b8ff 98%, transparent),
+    radial-gradient(2px 2px at 92% 86%, #ffe7aa 98%, transparent),
+    radial-gradient(1px 1px at 47% 43%, #fff0bf 98%, transparent);
+  opacity: .65;
+}
+
+.page {
+  width: min(880px, 100%);
+  padding: 28px 17px 50px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.top-ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: 12px;
+  margin: 7px 0 17px;
+  text-shadow: 0 0 15px rgba(230, 199, 124, .45);
+}
+
+.eyebrow {
+  text-align: center;
+  font: 10px 'Montserrat', sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #c6ad7d;
+  margin-bottom: 13px;
+}
+
+.hero-title {
+  text-align: center;
+  font: 500 clamp(24px, 5vw, 39px)/1.42 'Cinzel', serif;
+  color: var(--gold-light);
+  text-shadow: 0 0 23px rgba(230, 199, 124, .19);
+  letter-spacing: 1px;
+}
+
+.date {
+  text-align: center;
+  margin: 17px 0 25px;
+  color: #d9c8a5;
+  font-size: 20px;
+  letter-spacing: .6px;
+}
+
+/* Marco fotográfico */
+.photo-frame {
+  width: min(100%, 650px);
+  margin: 0 auto 27px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid rgba(230, 199, 124, .62);
+  border-radius: 5px 30px 5px 30px;
+  background:
+    linear-gradient(135deg, rgba(230,199,124,.12), transparent 45%),
+    rgba(10, 8, 15, .9);
+  box-shadow:
+    0 0 25px rgba(230,199,124,.08),
+    0 15px 48px rgba(0,0,0,.5);
+}
+
+.photo-label {
+  text-align: center;
+  font: 9px 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 9px 4px 12px;
+}
+
+.photo-inner {
+  height: clamp(210px, 58vw, 390px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px 20px 2px 20px;
+  border: 1px solid rgba(230,199,124,.25);
+  background:
+    radial-gradient(ellipse, rgba(96,69,119,.23), transparent 65%),
+    linear-gradient(145deg, #17111e, #08070c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.photo-inner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  cursor: zoom-in;
+}
+
+.photo-inner img[hidden] {
+  display: none;
+}
+
+.photo-placeholder {
+  text-align: center;
+  padding: 22px;
+  color: #d7bd84;
+  line-height: 1.8;
+}
+
+.photo-placeholder .cat {
+  font-size: 42px;
+  display: block;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 12px rgba(230,199,124,.3));
+}
+
+.photo-placeholder strong {
+  font: 12px 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.photo-placeholder small {
+  font-size: 16px;
+  color: #b7a9c6;
+}
+
+.photo-hint {
+  font: 9px 'Montserrat', sans-serif;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #a99b80;
+  padding: 11px 3px 3px;
+}
+
+/* Carta */
+.letter {
+  position: relative;
+  padding: clamp(23px, 5vw, 47px);
+  border: 1px solid rgba(230,199,124,.35);
+  border-radius: 32px 5px 32px 5px;
+  background:
+    linear-gradient(130deg, rgba(255,255,255,.018), transparent 35%),
+    var(--panel);
+  box-shadow:
+    inset 0 0 35px rgba(184,135,255,.025),
+    0 18px 55px rgba(0,0,0,.3);
+}
+
+.letter::before,
+.letter::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  font-size: 20px;
+  opacity: .8;
+}
+
+.letter::before {
+  top: 13px;
+  left: 17px;
+}
+
+.letter::after {
+  bottom: 13px;
+  right: 17px;
+}
+
+.letter p {
+  font-size: clamp(19px, 3vw, 23px);
+  line-height: 1.83;
+  margin: 0 0 21px;
+  color: #f1e5d4;
+  overflow-wrap: anywhere;
+}
+
+.letter p:last-child {
+  margin-bottom: 0;
+}
+
+.letter .salutation {
+  color: var(--gold-light);
+  font-weight: 700;
+  font-size: clamp(21px, 3.5vw, 26px);
+}
+
+.letter strong {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.letter .signature {
+  color: #f6dba0;
+  font-weight: 600;
+}
+
+/* Gatitos decorativos */
+.cat-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 29px auto;
+  color: var(--gold);
+  text-shadow: 0 0 14px rgba(230,199,124,.32);
+  font-size: 22px;
+}
+
+.cat-divider::before,
+.cat-divider::after {
+  content: "";
+  width: 65px;
+  max-width: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,199,124,.7));
+}
+
+.cat-divider::after {
+  transform: rotate(180deg);
+}
+
+/* Declaración final en neón */
+.declaration {
+  text-align: center;
+  padding: 29px 17px 31px;
+  border: 1px solid rgba(205,112,255,.35);
+  border-radius: 5px 28px 5px 28px;
+  background:
+    radial-gradient(ellipse at center, rgba(135,46,190,.14), transparent 70%),
+    rgba(12,7,20,.82);
+  box-shadow:
+    0 0 28px rgba(173,73,255,.09),
+    inset 0 0 30px rgba(173,73,255,.045);
+}
+
+.declaration .tiny-heading {
+  font: 9px 'Montserrat', sans-serif;
+  letter-spacing: 4px;
+  color: #d6a0ff;
+  margin-bottom: 21px;
+}
+
+.neon-love {
+  font: 500 clamp(17px, 3.4vw, 25px)/1.9 'Cinzel', serif;
+  color: #f0c5ff;
+  text-shadow:
+    0 0 5px rgba(226,164,255,.95),
+    0 0 12px rgba(202,92,255,.8),
+    0 0 28px rgba(167,55,255,.65),
+    0 0 50px rgba(167,55,255,.25);
+  animation: neonPulse 3.4s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 5px rgba(226,164,255,.75),
+      0 0 12px rgba(202,92,255,.55),
+      0 0 23px rgba(167,55,255,.4);
+  }
+  to {
+    text-shadow:
+      0 0 7px #f0c5ff,
+      0 0 17px #ce70ff,
+      0 0 36px rgba(167,55,255,.8);
+  }
+}
+
+.noah-line {
+  margin-top: 21px;
+  font-size: clamp(18px, 3.4vw, 23px);
+  line-height: 1.85;
+  color: #e6d3f5;
+}
+
+.noah-line strong {
+  color: #e7b7ff;
+}
+
+.love-signature {
+  margin-top: 25px;
+  font: 600 clamp(17px, 3.5vw, 25px)/1.8 'Cinzel', serif;
+  color: #fff0ff;
+  overflow-wrap: anywhere;
+  text-shadow:
+    0 0 5px #d98aff,
+    0 0 15px rgba(198,75,255,.9),
+    0 0 35px rgba(160,45,255,.65);
+}
+
+.final-paws {
+  color: #c77cff;
+  letter-spacing: 8px;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+/* Botón del poema */
+.poem-section {
+  text-align: center;
+  margin: 31px 0 9px;
+}
+
+.poem-caption {
+  color: #c7b7d6;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 17px;
+}
+
+.poem-button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 16px 25px;
+  border: 1px solid rgba(230,199,124,.75);
+  border-radius: 2px 18px 2px 18px;
+  background: linear-gradient(115deg, #21182c, #33203e, #17101f);
+  color: #ffe7ac;
+  font: 500 11px 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(230,199,124,.1);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.poem-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(230,199,124,.25);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 31px;
+  color: #8e7d9e;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.footer .paw {
+  color: var(--gold);
+}
+
+/* Visor de imagen a pantalla completa */
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 12px 18px;
+  background: rgba(3,2,6,.97);
+  backdrop-filter: blur(12px);
+}
+
+.viewer.open {
+  display: flex;
+}
+
+.viewer img {
+  display: block;
+  max-width: 97vw;
+  max-height: calc(100dvh - 100px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid rgba(230,199,124,.48);
+  box-shadow: 0 0 35px rgba(230,199,124,.12);
+  border-radius: 4px;
+}
+
+.back-button {
+  position: absolute;
+  top: max(13px, env(safe-area-inset-top));
+  left: 12px;
+  z-index: 2;
+  padding: 13px 17px;
+  border: 1px solid #d8b76f;
+  border-radius: 5px 14px 5px 14px;
+  background: rgba(23,17,30,.97);
+  color: #ffe6a3;
+  font: 500 12px 'Montserrat', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(230,199,124,.15);
+}
+
+.back-button:focus-visible,
+.poem-button:focus-visible {
+  outline: 2px solid #e8b4ff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 22px 12px 35px;
+  }
+
+  .eyebrow {
+    letter-spacing: 3px;
+    font-size: 9px;
+  }
+
+  .date {
+    font-size: 18px;
+  }
+
+  .letter {
+    padding: 29px 19px;
+  }
+
+  .letter p {
+    line-height: 1.75;
+  }
+
+  .declaration {
+    padding: 25px 14px;
+  }
+
+  .back-button {
+    font-size: 11px;
+    padding: 12px 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<main class="page">
+
+  <div class="top-ornament" aria-hidden="true">☾ ✧ 🐈 ✧ ☽</div>
+  <div class="eyebrow">Una caricia para tu alma · Una promesa para tu corazón</div>
+
+  <h1 class="hero-title">
+    ✦ DONDE MI AMOR TE ABRAZA SIN PEDIRTE QUE EXPLIQUES TU DOLOR ✦
+  </h1>
+
+  <p class="date">Lunes, 12 de octubre de 2026 ☀️🐈❤️‍🔥</p>
+
+  <section class="photo-frame" aria-label="Fotografía especial">
+    <div class="photo-label">♡ Un pequeño guardián de nuestros recuerdos ♡</div>
+
+    <div class="photo-inner" id="photoArea" title="Toca dos veces para ampliar la fotografía">
+      <div class="photo-placeholder" id="photoPlaceholder">
+        <span class="cat">🐈‍⬛</span>
+        <strong>UN RECUERDO QUE VIVE EN NUESTRO AMOR</strong>
+        <small>Nuestra huellita de cielo, siempre en el corazón. 🐾</small>
+      </div>
+
+      <img
+        id="memoryPhoto"
+        src="IMG_20261011_213559.png"
+        alt="Fotografía en memoria de nuestro hijito Noah"
+        hidden
+      >
+    </div>
+
+    <div class="photo-hint">DOS TOQUES SOBRE LA FOTO · PARA CONTEMPLARLA DE CERCA</div>
+  </section>
+
+  <article class="letter">
+
+    <p class="salutation"><strong>Mi Irremplazable Latido de Mi Eternidad,</strong> ❤️‍🩹💗</p>
+
+    <p>Buenos días, mi niña preciosa. ☀️❤️ Quiero que estas palabritas estén aquí desde que abras tus ojitos, esperándote con todo el amor que mi corazón siente por ti. 🥹💋</p>
+
+    <p>Sé que ayer fue difícil para ti, amor, y perdóname si te hice sentir que mis sentimientos estaban por encima de los tuyos. Nunca fue mi intención. Solo recordé aquellas palabras que yo mismo necesité escuchar alguna vez y que, cuando nadie me las dijo, tuve que aprender a regalarme para seguir adelante. Por eso te dije «no te rindas», porque quería abrazarte con aquello que un día me ayudó a mí. Pero comprendo que cada persona vive su dolor de una manera diferente, y quiero aprender a acompañarte como tú necesitas, no solamente como yo habría necesitado. 🫂❤️‍🩹</p>
+
+    <p>Ya no quiero extenderme con ese tema, mi amor. Solo quiero que recuerdes algo: <strong>no tienes que fingir estar bien conmigo, ni encontrar las palabras perfectas para explicarme lo que sientes.</strong> Puedes contar conmigo incluso en tus días más difíciles, porque mi amor por ti no depende de que estés feliz todo el tiempo. Te amo en tus sonrisas, en tus silencios y hasta en esos días en los que simplemente necesitas que alguien te abrace sin preguntar demasiado. 🥺💞</p>
+
+    <p>Si hoy pudiera estar cerquita de ti, te llenaría la carita de besitos, te abrazaría contra mi pecho y te susurraría que eres mi niña preciosa, mi elección de cada día y el amor que quiero cuidar con toda mi alma. 💋❤️‍🔥</p>
+
+    <p>Que esta mañana te encuentre sabiendo que aquí tienes un corazón que te ama inmensamente, que quiere comprenderte mejor y que jamás necesita verte perfecta para considerarte maravillosa, <strong>YA LO ERES MI NIÑA EN TU DÍAS BUENOS O DIFÍCILES</strong>.</p>
+
+    <p><strong>Te amo muchísimo, mi vida. Hoy, mañana y en cada amanecer que la vida me permita compartir contigo.</strong> 💗🐈‍⬛💋</p>
+
+    <p class="signature"><strong>Con todo mi amor, para ti, siempre.</strong> ❤️‍🔥💌</p>
+
+  </article>
+
+  <div class="cat-divider" aria-hidden="true">🐾 ✧ 🐈‍⬛ ✧ 🐾</div>
+
+  <section class="declaration">
+    <p class="tiny-heading">✧ UNA PROMESA ESCRITA CON TODO MI SER ✧</p>
+
+    <p class="neon-love">
+      Si pudiera detener el tiempo en una sola caricia,
+      elegiría el instante en que te abrazo y mi alma reconoce
+      que no existe otro lugar donde quiera quedarse.
+      Te elegiría en mil vidas, en cada amanecer y hasta
+      en los silencios donde solo nuestros corazones saben hablar.
+      ❤️‍🔥💜
+    </p>
+
+    <p class="noah-line">
+      Et que notre petit Noah veille sur nous depuis le ciel,
+      accompagnant chacun de nos pas, partout où la vie nous emmènera,
+      toujours uni à notre amour, ma précieuse. 🐈‍⬛🪽💜
+    </p>
+
+    <p class="love-signature">
+      TE AMO VALERIA PETRO VILLAZÓN ❤️‍🔥💜
+    </p>
+
+    <div class="final-paws" aria-hidden="true">🐾 ♡ 🐾 ♡ 🐾</div>
+  </section>
+
+  <section class="poem-section">
+    <p class="poem-caption">
+      Y si todavía quieres sentir un poquito más de todo lo que mi corazón guarda para ti… 💌🐈
+    </p>
+
+    <!-- REEMPLAZA PEGA_AQUI_EL_ENLACE_DEL_POEMA por el enlace publicado del poema -->
+    <a
+      class="poem-button"
+      id="poemLink"
+      href="https://j8753741-eng.github.io/Lunes-12-de-octubre-del-2026---poema/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🐾 ABRIR NUESTRO POEMA DE HOY ✧
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>Preparada desde el primer rayito de sol, para que la encuentres cuando abras tus ojitos. ☀️</p>
+    <p><span class="paw">🐾</span> Nuestro amor, nuestros recuerdos y todas las mañanas que aún nos esperan. <span class="paw">🐾</span></p>
+  </footer>
+
+</main>
+
+<!-- Visor ampliado de fotografía -->
+<div class="viewer" id="imageViewer" role="dialog" aria-modal="true" aria-label="Fotografía ampliada">
+  <button class="back-button" id="backButton" type="button">← Volver a la carta</button>
+  <img id="viewerPhoto" src="" alt="Fotografía ampliada en memoria de nuestro hijito Noah">
+</div>
+
+<script>
+(() => {
+  const photo = document.getElementById('memoryPhoto');
+  const photoArea = document.getElementById('photoArea');
+  const placeholder = document.getElementById('photoPlaceholder');
+  const viewer = document.getElementById('imageViewer');
+  const viewerPhoto = document.getElementById('viewerPhoto');
+  const backButton = document.getElementById('backButton');
+
+  let lastTap = 0;
+  let previousOverflow = '';
+
+  function showPlaceholder() {
+    photo.hidden = true;
+    placeholder.hidden = false;
+  }
+
+  function showPhoto() {
+    photo.hidden = false;
+    placeholder.hidden = true;
+  }
+
+  photo.addEventListener('load', () => {
+    if (photo.naturalWidth > 0) showPhoto();
+  });
+
+  photo.addEventListener('error', showPlaceholder);
+
+  if (photo.complete && photo.naturalWidth > 0) {
+    showPhoto();
+  } else {
+    showPlaceholder();
+  }
+
+  function openViewer() {
+    if (photo.hidden || !photo.naturalWidth) return;
+
+    viewerPhoto.src = photo.src;
+    viewer.classList.add('open');
+    previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    backButton.focus();
+  }
+
+  function closeViewer() {
+    viewer.classList.remove('open');
+    viewerPhoto.removeAttribute('src');
+    document.body.style.overflow = previousOverflow;
+    photoArea.setAttribute('tabindex', '0');
+    photoArea.focus({ preventScroll: true });
+  }
+
+  photoArea.addEventListener('dblclick', (event) => {
+    event.preventDefault();
+    openViewer();
+  });
+
+  // Doble toque compatible con teléfonos y tabletas.
+  photoArea.addEventListener('touchend', (event) => {
+    const now = Date.now();
+    if (now - lastTap < 350) {
+      event.preventDefault();
+      openViewer();
+      lastTap = 0;
+    } else {
+      lastTap = now;
+    }
+  }, { passive: false });
+
+  backButton.addEventListener('click', closeViewer);
+
+  viewer.addEventListener('click', (event) => {
+    if (event.target === viewer) closeViewer();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && viewer.classList.contains('open')) {
+      closeViewer();
+    }
+  });
+
+  // Evita navegar a un enlace de poema que aún no se ha configurado.
+  const poemLink = document.getElementById('poemLink');
+
+  poemLink.addEventListener('click', (event) => {
+    if (poemLink.getAttribute('href') === 'PEGA_AQUI_EL_ENLACE_DEL_POEMA') {
+      event.preventDefault();
+      alert('Todavía falta pegar el enlace del poema de hoy en el código HTML.');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
